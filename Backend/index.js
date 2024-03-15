@@ -28,7 +28,7 @@ const PORT = 3000;
         res.status(200).send("Connected to Database!!!")
     });
 
-    app.use((err, req, res, next) => {
+    app.use((err,res) => {
         console.error(err.stack);
         res.status(500).send("Something went wrong!");
     });
