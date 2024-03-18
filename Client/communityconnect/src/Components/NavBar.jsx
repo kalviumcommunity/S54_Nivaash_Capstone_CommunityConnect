@@ -10,7 +10,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="navbar bg-base-100 p-8" style={navbarStyle}>
+    <div className="navbar bg-base-100 p-4" style={navbarStyle}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
