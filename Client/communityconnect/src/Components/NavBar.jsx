@@ -45,7 +45,7 @@ const NavBar = () => {
           <li><a className="text-xl">Top Volunteers</a></li>
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end"
         <a href="#" className="btn bg-rose-600 w-22 md:w-32 mr-2 text-white text-lg">Login</a>
       </div>
     </div>
