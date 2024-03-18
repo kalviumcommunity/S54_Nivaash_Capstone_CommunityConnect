@@ -7,7 +7,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 const Footer = () => {
   return (
     <div>
-      <footer className="footer p-10 bg-base-200 text-base-content">
+      <footer className="footer text-white p-10 bg-[#191e24]">
         <aside>
           <img src={logo} alt="" />
           <p className='text-start text-lg' >Nivaash<br/>Professional Full Stack Web Developer</p>
