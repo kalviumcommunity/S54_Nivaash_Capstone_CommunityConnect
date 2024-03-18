@@ -10,7 +10,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="navbar bg-base-100 p-8" style={navbarStyle}>
+    <div className="navbar bg-base-100 p-6" style={navbarStyle}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -28,7 +28,7 @@ const NavBar = () => {
             <li><a className="text-base">Top Volunteers</a></li>
           </ul>
         </div>
-        <img src={logo} alt="" />
+        <img src={logo} alt="" className="w-40 h-auto md:w-auto" />
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -46,7 +46,7 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a href="#" className="btn bg-rose-600 w-32 mr-20 text-white text-lg ">Login</a>
+        <a href="#" className="btn bg-rose-600 w-22 md:w-32 mr-2 text-white text-lg">Login</a>
       </div>
     </div>
   );
