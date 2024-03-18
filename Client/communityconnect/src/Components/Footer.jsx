@@ -3,11 +3,12 @@ import logo from "../assets/logo.png";
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import NavBg from "../assets/Nav.webp"; 
 
 const Footer = () => {
   return (
     <div>
-      <footer className="footer text-white p-10 bg-[#191e24]">
+      <footer className="footer text-white p-10 bg-[#2b2c43]">
         <aside>
           <img src={logo} alt="" />
           <p className='text-start text-lg' >Nivaash<br/>Professional Full Stack Web Developer</p>
