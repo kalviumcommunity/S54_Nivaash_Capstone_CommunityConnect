@@ -28,7 +28,7 @@ const NavBar = () => {
             <li><a className="text-base">Top Volunteers</a></li>
           </ul>
         </div>
-        <img src={logo} alt="" className="w-50 h-auto md:w-auto" />
+        <img src={logo} alt="" className="w-40 h-auto md:w-auto" />
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -45,8 +45,8 @@ const NavBar = () => {
           <li><a className="text-xl">Top Volunteers</a></li>
         </ul>
       </div>
-      <div className="navbar-end">
-        <a href="#" className="btn bg-rose-600 w-24 md:w-32 mr-2 text-white text-lg">Login</a>
+      <div className="navbar-end"
+        <a href="#" className="btn bg-rose-600 w-22 md:w-32 mr-2 text-white text-lg">Login</a>
       </div>
     </div>
   );
