@@ -1,5 +1,5 @@
 import Pic from "../assets/SignUp.png";
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import MailIcon from '@mui/icons-material/Mail';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import NavBar from "../Components/NavBar.jsx";
 
@@ -20,8 +20,8 @@ function SignUp() {
             <h1 className="text-black text-3xl mt-5 mb-6">Sign Up</h1>
             <form className="flex flex-col items-center space-y-6 w-full max-w-md">
               <div className="flex justify-center items-center">
-                <MailOutlineIcon className="mr-2" />
-                <input type="email" id="email" placeholder="Your email" name="email" required className="w-80 px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500 bg-white text-black" />
+                <MailIcon className="mr-2" />
+                <input type="email" id="email" placeholder="Your email" name="email" required className="w-80 px-4 py-2  border rounded-md focus:outline-none focus:border-blue-500 bg-white text-black" />
               </div>
               <div className="mb-4 flex justify-center items-center">
                 <VpnKeyIcon className="mr-2" />
