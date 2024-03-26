@@ -8,7 +8,7 @@ function Login() {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data); // Handle form submission here
+    console.log(data); 
   };
 
   return (
