@@ -2,26 +2,7 @@ require("dotenv").config({ path: '../.env' });
 
 const mongoose = require("mongoose");
 
-// Define Volunteer Schema
-const volunteerSchema = new mongoose.Schema({
-    volunteerId: { type: Number, required: true, unique: true },
-    name: { type: String, required: true },
-    email: { type: String, required: true },
-    picture: { type: String },
-    age: { type: Number },
-    contactNo: { type: String },
-    address: { type: String },
-    education: [{
-        institution: { type: String },
-        degree: { type: String }
-    }],
-    experience: { type: String },
-    rating: { type: Number, default: 0 },
-    participation: { type: Number, default: 0 }
-});
 
-// Define model based on schema
-const Volunteer = mongoose.model("Volunteer", volunteerSchema);
 
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
@@ -84,7 +65,6 @@ async function addVolunteers() {
         console.error('Error adding volunteers:', error);
     }
 }
-
 addVolunteers();
 
 module.exports = { mongoose, Volunteer };
