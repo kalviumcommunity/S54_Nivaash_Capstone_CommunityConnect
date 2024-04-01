@@ -2,7 +2,7 @@ require("dotenv").config({ path: '../.env' });
 
 const mongoose = require("mongoose");
 
-const { Volunteer } = require("../Model/VolunteerSchema.js"); // Corrected import statement
+const { Volunteer } = require("../Model/VolunteerSchema.js"); 
 
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
