@@ -1,10 +1,10 @@
-
 const express = require("express");
 const app = express();
 const PORT = 3000;
 const cors = require("cors"); 
 const connectDatabase = require('./Config/Config.js');
 const errorHandler = require("./middleware/ErrorHandller.js");
+const volunteerRouter = require('./Routes/volunteerRouter');
 
 app.use(errorHandler);
 app.use(cors());
@@ -17,7 +17,9 @@ app.get("/", (req, res) => {
         });
     res.status(200).send("Connected to Database!!!")
 });
-    
+
+app.use("/volunteers", volunteerRouter);
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });

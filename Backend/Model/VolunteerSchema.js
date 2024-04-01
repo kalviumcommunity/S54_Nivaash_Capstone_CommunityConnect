@@ -1,18 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const CounterSchema = new Schema({
-    _id: { type: String, required: true },
-    sequence_value: { type: Number, default: 1 }
-});
-
-const VolunteerCounter = mongoose.model('VolunteerCounter', CounterSchema); // Modified model name
-
 const volunteerSchema = new Schema({
-    VolunteerId: {
-        type: Number,
-        unique: true
-    },
+
     name: {
         type: String,
         required: true
@@ -59,25 +49,6 @@ const volunteerSchema = new Schema({
     }
 });
 
-volunteerSchema.pre('save', async function (next) {
-    const volunteer = this;
-    if (!volunteer.isNew) {
-        return next();
-    }
-    try {
-        const counter = await VolunteerCounter.findByIdAndUpdate(
-            'volunteerId',
-            { $inc: { sequence_value: 1 } },
-            { new: true, upsert: true }
-        );
-        volunteer.VolunteerId = counter.sequence_value;
-        next();
-    } catch (error) {
-        console.error('Error in Counter.findByIdAndUpdate:', error); 
-        return next(error);
-    }
-});
-
 const Volunteer = mongoose.model('Volunteer', volunteerSchema);
 
-module.exports = { Volunteer, VolunteerCounter }; 
+module.exports = Volunteer;
