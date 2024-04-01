@@ -1,5 +1,5 @@
 
-const { Organization } = require("./OrganisationSchema.js");
+const { Organization } = require("../Model/OrganisationSchema.js");
 const mongoose = require("mongoose");
 require("dotenv").config({ path: '../.env' });
 
