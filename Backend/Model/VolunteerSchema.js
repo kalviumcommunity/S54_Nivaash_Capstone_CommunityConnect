@@ -6,7 +6,7 @@ const CounterSchema = new Schema({
     sequence_value: { type: Number, default: 1 }
 });
 
-const Counter = mongoose.model('Counter', CounterSchema);
+const VolunteerCounter = mongoose.model('VolunteerCounter', CounterSchema); // Modified model name
 
 const volunteerSchema = new Schema({
     VolunteerId: {
@@ -65,7 +65,7 @@ volunteerSchema.pre('save', async function (next) {
         return next();
     }
     try {
-        const counter = await Counter.findByIdAndUpdate(
+        const counter = await VolunteerCounter.findByIdAndUpdate(
             'volunteerId',
             { $inc: { sequence_value: 1 } },
             { new: true, upsert: true }
@@ -78,7 +78,6 @@ volunteerSchema.pre('save', async function (next) {
     }
 });
 
-
 const Volunteer = mongoose.model('Volunteer', volunteerSchema);
 
-module.exports = { Volunteer };
+module.exports = { Volunteer, VolunteerCounter }; 
