@@ -48,6 +48,14 @@ const volunteerSchema = new Schema({
     }],
     experience: {
         type: String
+    },
+    Participation: {
+        type: Number,
+        default: 0
+    },
+    rating: {
+        type: Number,
+        default: 0
     }
 });
 
