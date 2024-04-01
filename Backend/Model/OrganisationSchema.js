@@ -57,7 +57,15 @@ const organizationSchema = new Schema({
             type: String,
             required: true
         }
-    }]
+    }],
+    posts: {
+        type: Number,
+        default: 0
+    },
+    followers: {
+        type: Number,
+        default: 0
+    }
 });
 
 organizationSchema.pre('save', async function (next) {
