@@ -80,4 +80,4 @@ volunteerSchema.pre('save', async function (next) {
 
 const Volunteer = mongoose.model('Volunteer', volunteerSchema);
 
-module.exports = { Volunteer, VolunteerCounter }; // Export VolunteerCounter with Volunteer
+module.exports = { Volunteer, VolunteerCounter }; 
