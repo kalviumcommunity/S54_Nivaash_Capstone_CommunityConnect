@@ -2,9 +2,7 @@ require("dotenv").config({ path: '../.env' });
 
 const mongoose = require("mongoose");
 
-
-
-
+const { Volunteer } = require("../Model/VolunteerSchema.js"); // Corrected import statement
 
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
@@ -15,51 +13,55 @@ mongoose.connect(process.env.MONGO_URL, {
 
 const dummyVolunteers = [
     {
-        name: "John Doe",
-        email: "john@example.com",
-        picture: "https://example.com/johndoe.jpg",
-        age: 30,
-        contactNo: "1234567890",
-        address: "123 Main St, City, Country",
-        education: [
+        "name": "John Doe",
+        "email": "johndoe@example.com",
+        "picture": "https://example.com/profile.jpg",
+        "age": 25,
+        "contactNo": "1234567890",
+        "address": "123 Main Street, Cityville",
+        "education": [
             {
-                institution: "University of XYZ",
-                degree: "Bachelor of Science in Engineering"
-            },
-            {
-                institution: "ABC College",
-                degree: "Master of Business Administration"
+                "institution": "University of Cityville",
+                "degree": "Bachelor of Science in Computer Science"
             }
         ],
-        experience: "5 years of volunteering experience in community outreach programs."
+        "experience": "Software Engineer at XYZ Corp",
+        "Participation": 5,
+        "rating": 4.5
     },
     {
-        name: "Jane Smith",
-        email: "jane@example.com",
-        picture: "https://example.com/janesmith.jpg",
-        age: 25,
-        contactNo: "9876543210",
-        address: "456 Elm St, City, Country",
-        education: [
+        "name": "Jane Smith",
+        "email": "janesmith@example.com",
+        "picture": "https://example.com/profile2.jpg",
+        "age": 30,
+        "contactNo": "9876543210",
+        "address": "456 Oak Street, Townsville",
+        "education": [
             {
-                institution: "PQR Institute",
-                degree: "Bachelor of Arts in Psychology"
+                "institution": "Townsville University",
+                "degree": "Master of Business Administration"
+            },
+            {
+                "institution": "Townsville College",
+                "degree": "Bachelor of Arts in Marketing"
             }
         ],
-        experience: "2 years of volunteering experience in tutoring underprivileged children."
+        "experience": "Marketing Manager at ABC Corp",
+        "Participation": 3,
+        "rating": 4.0
     }
 ];
 
 async function addVolunteers() {
     try {
-        const maxVolunteer = await Volunteer.findOne({}, {}, { sort: { volunteerId: -1 } });
+        const maxVolunteer = await Volunteer.findOne({}, {}, { sort: { VolunteerId: -1 } }); // Corrected sorting field
         let nextVolunteerId = 1;
         if (maxVolunteer) {
-            nextVolunteerId = maxVolunteer.volunteerId + 1;
+            nextVolunteerId = maxVolunteer.VolunteerId + 1; // Corrected field name
         }
         const volunteersWithIds = dummyVolunteers.map((volunteer, index) => ({
             ...volunteer,
-            volunteerId: nextVolunteerId + index
+            VolunteerId: nextVolunteerId + index // Corrected field name
         }));
         await Volunteer.insertMany(volunteersWithIds);
         console.log('Volunteers added successfully!');
