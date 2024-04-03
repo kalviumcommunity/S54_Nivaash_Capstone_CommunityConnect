@@ -1,9 +1,18 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const CounterSchema = new Schema({
+    _id: { type: String, required: true },
+    sequence_value: { type: Number, default: 1 }
+});
+
+const OrganisationCounter = mongoose.model('OrganisationCounter', CounterSchema);
 
 const organizationSchema = new Schema({
-
+    organizationId: { 
+        type: Number,
+        unique: true
+    },
     organizationName: {
         type: String,
         required: true
@@ -53,13 +62,30 @@ const organizationSchema = new Schema({
         type: Number,
         default: 0
     },
-    followers: {
+    followers: { 
         type: Number,
         default: 0
     }
 });
 
+organizationSchema.pre('save', async function (next) {
+    const organization = this;
+    if (!organization.isNew) {
+        return next();
+    }
+    try {
+        const counter = await OrganisationCounter.findByIdAndUpdate(
+            { _id: 'organizationId' }, 
+            { $inc: { sequence_value: 1 } },
+            { new: true, upsert: true }
+        );
+        organization.organizationId = counter.sequence_value;
+        next();
+    } catch (error) {
+        return next(error);
+    }
+});
 
 const Organization = mongoose.model('Organization', organizationSchema);
 
-module.exports = { Organization };
+module.exports = { Organization, OrganisationCounter };

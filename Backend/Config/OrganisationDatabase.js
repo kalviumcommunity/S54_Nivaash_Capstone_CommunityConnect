@@ -12,63 +12,31 @@ mongoose.connect(process.env.MONGO_URL, {
 
     const dummyOrganizations = [
         {
-            organizationName: "Charity Foundation",
-            emailAddress: "foundation@example.com",
-            address: "123 Charity Street, Cityville",
-            establishmentYear: 2005,
-            successfulEvents: [
+            "organizationName": "Community Foundation",
+            "emailAddress": "info@communityfoundation.org",
+            "address": "123 Main Street, Anytown, USA",
+            "establishmentYear": 1995,
+            "successfulEvents": [
                 {
-                    eventName: "Annual Fundraiser Gala",
-                    eventDate: new Date("2023-08-15"),
-                    eventPlace: "City Convention Center"
+                "eventName": "Annual Gala",
+                "eventDate": "2024-05-15",
+                "eventPlace": "Grand Ballroom"
                 },
                 {
-                    eventName: "Community Health Fair",
-                    eventDate: new Date("2023-05-20"),
-                    eventPlace: "City Park"
+                "eventName": "Community Cleanup",
+                "eventDate": "2024-07-20",
+                "eventPlace": "Local Park"
                 }
             ],
-            awards: [
+            "awards": [
                 {
-                    awardName: "Community Service Award",
-                    awardDate: new Date("2022-12-01"),
-                    awardDescription: "Recognized for outstanding contributions to the community"
+                "awardName": "Outstanding Community Service Award",
+                "awardDate": "2023-12-31",
+                "awardDescription": "Recognition for exemplary community service"
                 }
             ],
-            posts: 10,
-            followers: 5000
-        },
-        {
-            organizationName: "Environmental Conservation Society",
-            emailAddress: "conservation@example.com",
-            address: "456 Green Street, Townsville",
-            establishmentYear: 2010,
-            successfulEvents: [
-                {
-                    eventName: "Tree Planting Day",
-                    eventDate: new Date("2023-04-22"),
-                    eventPlace: "Townsville Park"
-                },
-                {
-                    eventName: "Beach Cleanup Campaign",
-                    eventDate: new Date("2023-07-10"),
-                    eventPlace: "Townsville Beach"
-                }
-            ],
-            awards: [
-                {
-                    awardName: "Environmental Excellence Award",
-                    awardDate: new Date("2022-11-15"),
-                    awardDescription: "Recognized for outstanding efforts in environmental conservation"
-                },
-                {
-                    awardName: "Community Engagement Award",
-                    awardDate: new Date("2023-02-28"),
-                    awardDescription: "Recognized for engaging the community in environmental initiatives"
-                }
-            ],
-            posts: 20,
-            followers: 8000
+            "posts": 20,
+            "followers": 500
         }
     ];
     
