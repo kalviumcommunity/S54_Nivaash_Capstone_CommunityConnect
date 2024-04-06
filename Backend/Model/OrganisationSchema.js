@@ -58,6 +58,7 @@ const organizationSchema = new Schema({
     }
 });
 
+
 const Organization = mongoose.model('Organization', organizationSchema);
 
 module.exports = { Organization };

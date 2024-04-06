@@ -1,0 +1,205 @@
+{
+  "name": "Capstone",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "Organisation",
+      "items": [
+        {
+          "type": "http",
+          "name": "All Organisations",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:3000/",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "Creating Organisation",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:3000/organisations/createorganisation",
+            "method": "POST",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Volunteer",
+      "items": [
+        {
+          "type": "http",
+          "name": "All Volunteers",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:3000/volunteers",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "Creating Volunteer",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:3000/volunteers/createuser",
+            "method": "POST",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Posts",
+      "items": [
+        {
+          "type": "http",
+          "name": "Post",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:3000/post/createpost",
+            "method": "POST",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "Server",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:3000/",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": {
+                "username": "",
+                "password": ""
+              },
+              "bearer": {
+                "token": ""
+              }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "query": []
+          }
+        }
+      ]
+    }
+  ],
+  "environments": []
+}

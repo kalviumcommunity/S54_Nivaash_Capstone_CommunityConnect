@@ -1,5 +1,6 @@
 const { Organization } = require('../Model/OrganisationSchema');
 
+
 const getOneOrganisation = async (req, res) => {
     try {
         const id = req.params.id;
