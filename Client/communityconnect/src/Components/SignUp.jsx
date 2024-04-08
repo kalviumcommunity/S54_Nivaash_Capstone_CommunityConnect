@@ -1,3 +1,5 @@
+// SignUp.jsx
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import Pic from "../assets/SignUp.png";
 import MailIcon from '@mui/icons-material/Mail';
@@ -5,11 +7,8 @@ import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import NavBar from "../Components/NavBar.jsx";
 import { useAuth0 } from "@auth0/auth0-react";
 
-
 function SignUp() {
-
   const { loginWithRedirect } = useAuth0();
-
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {
@@ -68,7 +67,7 @@ function SignUp() {
                 {errors.repeatPassword && <span className="text-red-500">Passwords do not match</span>}
                 <button type="submit" className="w-2/4 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">Sign Up</button>
               </form>
-              <div class="divider ">OR</div>
+              <div className="divider">OR</div>
               <div className="flex justify-center space-x-4">
                 <button onClick={() => loginWithRedirect()} className="flex items-center text-black border-solid border-2  border-gray-500 text-lg md:text-xl  bg-[white] py-2 px-8 rounded-lg hover:bg-opacity-80 transition duration-300">
                   <img width={"20px"} src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png" alt="" />Google

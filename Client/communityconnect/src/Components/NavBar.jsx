@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../assets/logo.png";
-import NavBg from "../assets/Nav.webp"; 
+import NavBg from "../assets/Nav.webp";
+import { Link } from "react-router-dom"; 
 
 const NavBar = () => {
   const navbarStyle = {
@@ -28,7 +29,9 @@ const NavBar = () => {
             <li><a className="text-white">Top Volunteers</a></li>
           </ul>
         </div>
-        <img src={logo} alt="" className="w-40 h-auto md:w-auto" />
+        <Link to="/" >
+          <img src={logo} alt="" className="w-40 h-auto md:w-auto" />
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -46,7 +49,9 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a href="#" className="btn bg-rose-600 w-22 md:w-32 mr-2 text-white text-lg">Login</a>
+        <Link to="/signup" >
+          <p className="btn bg-rose-600 w-22 md:w-32 mr-2 text-white text-lg">SignUp</p>
+        </Link>
       </div>
     </div>
   );
