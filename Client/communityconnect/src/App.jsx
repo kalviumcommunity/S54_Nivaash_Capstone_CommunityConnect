@@ -1,15 +1,14 @@
 
 import './App.css'
-import LandingPage from './Components/LandingPage'
 import AllRoutes from './Components/Routes/AllRoutes'
-import VolunteerNavBar from './Components/VolunteerNavBar'
+import VolunteerProfile from './Components/VolunteerProfile'
 
 function App() {
 
   return (
     <>
       {/* <AllRoutes/> */}
-      <VolunteerNavBar/>
+      <VolunteerProfile/>
     </>
   )
 }

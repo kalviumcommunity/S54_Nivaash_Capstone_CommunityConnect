@@ -13,3 +13,19 @@ body{
   text-align: center;
 }
 
+.overflow-y-auto::-webkit-scrollbar {
+  width: 8px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+  background-color: rgb(58, 61, 91);
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: rgb(163, 178, 204);
+  border-radius: 4px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(163, 178, 204);
+}
