@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+import { Link } from "react-router-dom";
 import homePic from "../assets/HomePic.webp";
 import ServicePic from "../assets/Service.webp";
 import Male from "../assets/VolunteerMale.png"
@@ -137,11 +137,13 @@ const LandingPage = () => {
         >
           Top Volunteers
         </motion.h1>
-        <div className="flex flex-wrap justify-center md:justify-evenly mt-10 mb-10 p-5 pb-20">
-          {volunteersData.map((volunteer, index) => (
-            <VolunteerCard key={index} volunteer={volunteer} />
-          ))}
-        </div>
+        <Link to="/volunteerprofile" >
+          <div className="flex flex-wrap justify-center md:justify-evenly mt-10 mb-10 p-5 pb-20">
+            {volunteersData.map((volunteer, index) => (
+              <VolunteerCard key={index} volunteer={volunteer} />
+            ))}
+          </div>
+        </Link>
       </div>
 
       <div className="flex flex-col md:flex-row items-center md:items-stretch mt-10 mb-10 space-y-5 md:space-y-0 py-10 md:space-x-5 justify-center md:justify-between">

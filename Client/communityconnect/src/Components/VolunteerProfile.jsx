@@ -183,8 +183,7 @@ return (
         </div>
     </motion.div>
 </>
-
-  );
+);
 };
 
 export default VolunteerProfile;

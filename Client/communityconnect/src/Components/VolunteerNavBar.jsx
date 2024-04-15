@@ -5,23 +5,24 @@ import Volunteer from "../assets/VolunteerProfilePic.png";
 
 const VolunteerNavBar = () => {
   return (
-    <div className="navbar bg-[#2B2D42] py-4 px-6 md:px-12">
+    <div className="navbar bg-[#2B2D42] py-4 px-12">
       <div className="navbar-start flex items-center">
-        <button className="btn btn-ghost text-white">
-          <ChevronLeft />
-        </button>
-        <img src={Volunteer} alt="Profile" className="w-8 h-8 md:w-10 md:h-10 rounded-full mr-2" />
-        <span className="text-white text-sm md:text-base">Nivaash</span>
+        <Link to="/" >
+          <button className="btn btn-ghost text-white">
+            <ChevronLeft />
+          </button>
+        </Link>
+        <img src={Volunteer} alt="Profile" className="w-10 h-10 rounded-full mr-2" />
+        <span className="text-white">Nivaash</span>
       </div>
-
       {/* Edit and delete buttons */}
       <div className="navbar-end">
-        <div className="flex items-center space-x-2 md:space-x-4">
-          <button className="btn bg-success w-12 h-8 md:w-16 md:h-10 md:text-lg text-white">
+        <div className="flex items-center space-x-4">
+          <button className="btn bg-success w-16 md:w-32 text-white text-lg">
             <Edit />
             <p className="hidden md:block">Edit</p>
           </button>
-          <button className="btn bg-rose-600 w-12 h-8 md:w-16 md:h-10 md:text-lg text-white">
+          <button className="btn bg-rose-600 w-16 md:w-32 text-white text-lg">
             <Delete />
             <p className="hidden md:block">Delete</p>
           </button>
