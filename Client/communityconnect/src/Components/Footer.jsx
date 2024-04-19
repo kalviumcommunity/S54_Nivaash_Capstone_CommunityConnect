@@ -8,7 +8,7 @@ import NavBg from "../assets/Nav.webp";
 const Footer = () => {
   return (
     <div>
-      <footer className="footer text-white p-10 bg-[#2b2c43]">
+      <footer id="footer" className="footer text-white p-10 bg-[#2b2c43]">
         <aside>
           <img src={logo} alt="" />
           <p className='text-start text-lg' >Nivaash<br/>Professional Full Stack Web Developer</p>

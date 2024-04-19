@@ -80,7 +80,7 @@ const LandingPage = () => {
   return (
     <>
       <NavBar />
-      <div className="flex flex-col md:flex-row items-center md:items-stretch mt-5 space-y-5 md:space-y-0 md:space-x-5 justify-center md:justify-between">
+      <div className="flex flex-col md:flex-row items-center md:items-stretch mt-10 space-y-5 md:space-y-0 md:space-x-5 justify-center md:justify-between">
         <motion.div
           className="md:w-1/2 flex flex-col bg-white py-10 justify-center items-start ml-11"
           initial={{ opacity: 0, y: 50 }}
@@ -89,7 +89,7 @@ const LandingPage = () => {
           transition={{ duration: 0.6 }}
         >
           <motion.h1
-            style={{ fontFamily: "Jomolhari", width: "90%" }}
+            style={{ fontFamily: "Jomolhari", width: "80%" }}
             className="text-3xl md:text-4xl text-black font-bold mb-3 text-center md:mb-10 md:text-left md:leading-relaxed"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -126,7 +126,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className='bg-[#2b2c43] h-100'>
+      <div id='topvolunteers' className='bg-[#2b2c43] h-100'>
         <motion.h1
           style={{ fontFamily: "Jomolhari", letterSpacing: "1.5px" }}
           className='text-white text-4xl pt-20'
@@ -138,7 +138,7 @@ const LandingPage = () => {
           Top Volunteers
         </motion.h1>
         <Link to="/volunteerprofile" >
-          <div className="flex flex-wrap justify-center md:justify-evenly mt-10 mb-10 p-5 pb-20">
+          <div  className="flex flex-wrap justify-center md:justify-evenly mt-10 mb-10 p-5 pb-20">
             {volunteersData.map((volunteer, index) => (
               <VolunteerCard key={index} volunteer={volunteer} />
             ))}
@@ -146,7 +146,7 @@ const LandingPage = () => {
         </Link>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center md:items-stretch mt-10 mb-10 space-y-5 md:space-y-0 py-10 md:space-x-5 justify-center md:justify-between">
+      <div id="services" className="flex flex-col md:flex-row items-center md:items-stretch mt-10 mb-10 space-y-5 md:space-y-0 py-10 md:space-x-5 justify-center md:justify-between">
         <div className="md:w-1/2 flex justify-center items-center" data-aos="fade-right">
           <img className='rounded-full' src={ServicePic} alt="CommunityConnect" width="80%" />
         </div>
