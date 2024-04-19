@@ -11,17 +11,17 @@ const volunteerSchema = new Schema({
         type: String,
         required: true
     },
+    password:{
+        type:String
+    },
     picture: {
-        type: String,
-        required: true
+        type: String
     },
     age: {
-        type: Number,
-        required: true
+        type: Number
     },
     contactNo: {
-        type: String,
-        required: true
+        type: String
     },
     address: {
         type: String
@@ -29,11 +29,9 @@ const volunteerSchema = new Schema({
     education: [{
         institution: {
             type: String,
-            required: true
         },
         degree: {
             type: String,
-            required: true
         }
     }],
     experience: {
