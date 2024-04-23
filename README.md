@@ -36,8 +36,4 @@ Overall, this web application aims to foster a collaborative ecosystem where Soc
 6. **Payment Integration:**
     - Social Welfare Organizations can create accounts by paying a nominal fee through secure Razorpay integration.
 
-7. **Chat Application:**
-    - Integrated chat functionality enables real-time communication between Social Welfare Organizations and volunteers.
-    - Facilitates efficient coordination and updates regarding events or initiatives.
-
 ## Front End Deployed Link : https://communityconnect-phi.vercel.app/ ###
