@@ -85,7 +85,7 @@ return (
     <>
     <VolunteerNavBar />
     <motion.div
-        className="volunteer-profile flex flex-col items-center bg-white py-4 px-4 md:px-12"
+        className="volunteer-profile h-full flex flex-col items-center bg-white py-4 px-4 md:px-12"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -138,7 +138,7 @@ return (
                             Email : <span className="font-medium text-white">{volunteerData.email}</span>
                         </p>
                         <p>
-                            Contact no : <span className="font-medium text-white">{volunteerData.contactNo}</span>
+                            Contact No : <span className="font-medium text-white">{volunteerData.contactNo}</span>
                         </p>
                         <p>
                             Address : <span className="font-medium text-white">{volunteerData.address}</span>
