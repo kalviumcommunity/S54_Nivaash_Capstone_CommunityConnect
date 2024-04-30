@@ -1,6 +1,6 @@
     const express = require('express');
     const router = express.Router();
-    const volunteerController = require('../Controllers/VolunteerController');
+    const volunteerController = require('../Controllers/VolunteerController.js');
 
     // Create a volunteer
     router.post('/createvolunteer', volunteerController.createVolunteer);

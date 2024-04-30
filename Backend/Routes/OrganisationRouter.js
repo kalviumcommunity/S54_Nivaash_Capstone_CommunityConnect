@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const organisationController = require('../Controllers/OrganisationController');
+const organisationController = require('../Controllers/OrganisationController.js');
 
 // Create an organisation
 router.post('/createorganisation', organisationController.createOrganisation);
