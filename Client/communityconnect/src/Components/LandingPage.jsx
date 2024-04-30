@@ -117,7 +117,9 @@ const LandingPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Explore
+              <Link to="orgposts" >
+                Explore
+              </Link>
             </motion.button>
           </div>
         </motion.div>
@@ -186,7 +188,10 @@ const LandingPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Start Helping !
+              <Link to="orgposts" >
+                Start Helping !
+              </Link>
+              
             </motion.button>
           </div>
         </motion.div>

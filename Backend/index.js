@@ -1,8 +1,11 @@
+// index.js
+
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const app = express();
 const PORT = 3000;
+
 const cors = require("cors"); 
 const errorHandler = require("./middleware/ErrorHandller.js");
 const volunteerRouter = require('./Routes/VolunteerRouter.js');

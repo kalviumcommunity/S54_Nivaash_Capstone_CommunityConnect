@@ -44,7 +44,7 @@ const SignUp = () => {
   return (
     <div className='h-full'>
       <ToastContainer />
-      <Navbar />
+      {/* <Navbar /> */}
       <div className='flex justify-evenly mt-20'>
         <div className='flex flex-col justify-evenly mb-5' >
           <div >

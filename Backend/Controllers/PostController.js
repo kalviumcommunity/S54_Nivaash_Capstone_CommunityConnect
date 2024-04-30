@@ -1,3 +1,4 @@
+//postController.js
 const { Post } = require('../Model/PostSchema');
 
 const getOnePost = async (req, res) => {
@@ -16,9 +17,10 @@ const getOnePost = async (req, res) => {
 
 const createPost = async (req, res) => {
     try {
-        const post = new Post(req.body);
+        const { OrganisationName, Location, EventImage, Description, startDate, endDate } = req.body;
+        const post = new Post({ OrganisationName, Location, EventImage, Description, startDate, endDate });
         await post.save();
-        res.status(201).send(post);
+        res.status(201).json(post);
     } catch (error) {
         console.error("Error creating post:", error);
         res.status(500).send("Internal server error");

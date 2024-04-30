@@ -4,6 +4,7 @@ import LandingPage from '../LandingPage.jsx'
 import SignUp from '../SignUp.jsx'
 import Login from "../Login.jsx"
 import VolunteerProfile from '../VolunteerProfile.jsx'
+import OrganizationPosts from '../Postings/OrganizationPosts.jsx'
 
 
 const AllRoutes = () => {
@@ -13,6 +14,7 @@ const AllRoutes = () => {
             <Route path="/login" element={<Login/>} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/volunteerprofile" element={<VolunteerProfile/>} />
+            <Route path="/orgposts" element={<OrganizationPosts/>} />
         </Routes>  
     )
 }
