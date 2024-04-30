@@ -59,9 +59,10 @@
 
                 setLoading(true);
               
-                await axios.post('http://localhost:3000/post/create', formData);
+                await axios.post('https://communityserver.vercel.app/post/create', formData);
                 resetForm();
                 toast.success('Post created successfully');
+                window.location.reload()
             } catch (error) {
                 console.error('Error creating post:', error);
                 toast.error('Failed to create post');

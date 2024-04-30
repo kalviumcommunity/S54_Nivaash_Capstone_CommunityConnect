@@ -17,18 +17,21 @@ const OrganizationPosts = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/post');
+                const response = await axios.get('https://communityserver.vercel.app/post');
                 setPosts(response.data);
                 console.log(response.data);
-            } catch (error) {
+            } catch (error) {                           
                 console.error('Error fetching posts:', error);
             }
         };
         fetchPosts();
     }, []);
 
+    
+
     const handleCreatePostClick = () => {
         setShowCreatePost(true); 
+        
     };
 
 
