@@ -5,12 +5,13 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
 
-
   return (
       <div className="flex justify-center sticky top-3 z-50">
-        <div className="navbar bg-base-100 rounded-box"  
+        <div className="navbar bg-base-100 rounded-box mt-0"  
         style={{
           width: "90vw",
+          height: "60px", // Adjust the height as per your requirement
+          lineHeight: "60px", // Center align the content vertically
           backgroundImage: `url(${NavBg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -51,10 +52,12 @@ const NavBar = () => {
             </div>
             <div className="lg:ml-12" >
               <img
-                className="w-36 sm:w-48 md:w-64 lg:w-64"
+                className="sm:w-48 md:w-64"
                 src={logo}
                 alt="Logo"
                 class="logo-image"
+                width={"200px"}
+                loading="lazy"
               />
             </div>
           </div>
