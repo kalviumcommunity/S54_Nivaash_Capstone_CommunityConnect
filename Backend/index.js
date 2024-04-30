@@ -1,5 +1,3 @@
-// index.js
-
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
@@ -16,14 +14,18 @@ app.use(errorHandler);
 app.use(cors());
 app.use(express.json());
 
+
 async function connectDatabase() {
     try {
         await mongoose.connect(process.env.MONGO_URL);
-        console.log('Connected to Database!!!');
+        console.log('Connected to Database!');
     } catch (error) {
         console.error('Error connecting to Database:', error);
+        process.exit(1); 
     }
 }
+
+connectDatabase();
 
 app.get("/", (req, res) => {
     connectDatabase()
