@@ -53,6 +53,27 @@ const updatePost = async (req, res) => {
     }
 };
 
+const addComment = async (req, res) => {
+    try {
+        const postId = req.params.postId;
+        const { comment } = req.body;
+
+        const post = await Post.findById(postId);
+        if (!post) {
+            return res.status(404).send('Post not found');
+        }
+
+        post.comments.push(comment); 
+        await post.save();
+
+        res.status(201).json(post);
+    } catch (error) {
+        console.error("Error adding comment:", error);
+        res.status(500).send("Internal server error");
+    }
+};
+
+
 const deletePost = async (req, res) => {
     try {
         const id = req.params.id;
@@ -72,5 +93,6 @@ module.exports = {
     createPost,
     getAllPosts,
     updatePost,
-    deletePost
+    deletePost,
+    addComment
 };
