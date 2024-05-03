@@ -1,13 +1,38 @@
-// Login.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import Pic from "../assets/SignUp.png";
 import NavBar from "../Components/NavBar.jsx";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Link } from "react-router-dom"; 
-
+import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 export default function Login() {
   const { isAuthenticated, loginWithRedirect } = useAuth0();
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  });
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('https://communityserver.vercel.app/volunteers/login', formData);
+      // Assuming server returns a JWT upon successful login
+      const { token } = response.data;
+      // Store token in localStorage
+      localStorage.setItem('token', token);
+      // Redirect user to desired page after successful login
+      navigate('/dashboard');
+    } catch (error) {
+      // Handle login error
+      setError('Invalid credentials. Please try again.');
+    }
+  };
 
   return (
     <>
@@ -26,9 +51,10 @@ export default function Login() {
               <div style={{boxShadow:"5px 0px 5px 0px rgba(0,0,0,0.8)"}} className="flex flex-col justify-center py-16 items-center w-full h-full md:w-full px-0 shadow-md">
                 <h1 className="text-black text-xl md:text-2xl mb-12">Login</h1>
                 {!isAuthenticated && (
-                  <form className="flex flex-col items-center space-y-6 w-full h-full">
-                    <input type="email" placeholder="Email" className="w-64 md:w-80 px-3 py-2 border border-black rounded-md focus:outline-none focus:border-blue-500 bg-white text-black text-sm md:text-base" />
-                    <input type="password" placeholder="Password" className="w-64 md:w-80 px-3 py-2 border border-black rounded-md focus:outline-none focus:border-blue-500 bg-white text-black text-sm md:text-base" />
+                  <form onSubmit={handleSubmit} className="flex flex-col items-center space-y-6 w-full h-full">
+                    <input type="email" placeholder="Email" name="email" value={formData.email} onChange={handleChange} className="w-64 md:w-80 px-3 py-2 border border-black rounded-md focus:outline-none focus:border-blue-500 bg-white text-black text-sm md:text-base" />
+                    <input type="password" placeholder="Password" name="password" value={formData.password} onChange={handleChange} className="w-64 md:w-80 px-3 py-2 border border-black rounded-md focus:outline-none focus:border-blue-500 bg-white text-black text-sm md:text-base" />
+                    {error && <p className="text-red-500">{error}</p>}
                     <button type="submit" className="w-32 md:w-40 bg-blue-500 text-white py-2 px-3 md:px-4 rounded-md hover:bg-blue-600 transition duration-300 text-sm md:text-base">Login</button>
                   </form>
                 )}

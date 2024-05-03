@@ -25,7 +25,8 @@ const postSchema = new mongoose.Schema({
   endDate: {
     type: Date,
     required: true
-  }
+  },
+  comments:[]
 });
 
 const Post = mongoose.model('Post', postSchema);
