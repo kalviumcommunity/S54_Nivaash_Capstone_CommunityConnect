@@ -7,7 +7,11 @@ const organizationSchema = new Schema({
         type: String,
         required: true
     },
-    emailAddress: {
+    contactNo:{
+        type: String,
+        required:true
+    },
+    email: {
         type: String,
         required: true,
         unique: true
@@ -20,34 +24,10 @@ const organizationSchema = new Schema({
         type: Number,
         required: true
     },
-    successfulEvents: [{
-        eventName: {
-            type: String,
-            required: true
-        },
-        eventDate: {
-            type: Date,
-            required: true
-        },
-        eventPlace: {
-            type: String,
-            required: true
-        }
-    }],
-    awards: [{
-        awardName: {
-            type: String,
-            required: true
-        },
-        awardDate: {
-            type: Date,
-            required: true
-        },
-        awardDescription: {
-            type: String,
-            required: true
-        }
-    }],
+    Password: {
+        type: String,
+        required: true
+    },
     posts: {
         type: Number,
         default: 0
@@ -55,7 +35,23 @@ const organizationSchema = new Schema({
     followers: { 
         type: Number,
         default: 0
-    }
+    },
+    successfulEvents: [{
+        eventName: {
+            type: String,
+        },
+        eventPlace: {
+            type: String,
+        }
+    }],
+    awards: [{
+        awardName: {
+            type: String,
+        },
+        awardDescription: {
+            type: String,
+        }
+    }],
 });
 
 
