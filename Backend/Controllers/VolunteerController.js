@@ -1,4 +1,6 @@
-  const Volunteer = require("../Model/VolunteerSchema.js");
+// volunteerController.js
+
+const Volunteer = require("../Model/VolunteerSchema.js");
 
 
   const getOneVolunteer = async (req, res) => {
@@ -14,6 +16,21 @@
       res.status(500).send("Internal server error");
     }
   };
+
+  const getVolunteerByEmail = async (req, res) => {
+    try {
+        const email = req.params.email;
+        const volunteer = await Volunteer.findOne({ email });
+        if (!volunteer) {
+            return res.status(404).send('Volunteer not found');
+        }
+        res.status(200).json(volunteer);
+    } catch (error) {
+        console.error("Error fetching volunteer:", error);
+        res.status(500).send("Internal server error");
+    }
+};
+
 
   const createVolunteer = async (req, res) => {
     try {
@@ -35,6 +52,48 @@
       res.status(500).send("Internal server error");
     }
   };
+
+  const addEducation = async (req, res) => {
+    try {
+        const email = req.params.email;
+        const education = req.body;
+        const volunteer = await Volunteer.findOneAndUpdate(
+            { email },
+            { $push: { education } },
+            { new: true }
+        );
+        if (!volunteer) {
+            return res.status(404).send('Volunteer not found');
+        }
+        res.status(200).json(volunteer);
+    } catch (error) {
+        console.error("Error adding education:", error);
+        res.status(500).send("Internal server error");
+    }
+};
+
+// ExperienceController.js
+
+const addExperience = async (req, res) => {
+  try {
+    const email  = req.params.email;
+    const experience = req.body;
+    const volunteer = await Volunteer.findOneAndUpdate(
+      { email },
+      { $push: { experience } },
+      { new: true }
+    );
+    if (!volunteer) {
+      return res.status(404).send('Volunteer not found');
+    }
+    res.status(200).json(volunteer);
+  } catch (error) {
+    console.error("Error adding experience:", error);
+    res.status(500).send("Internal server error");
+  }
+};
+
+
 
   const updateVolunteer = async (req, res) => {
     try {
@@ -68,8 +127,11 @@
 
   module.exports = {
     getOneVolunteer,
+    getVolunteerByEmail,
     createVolunteer,
     getAllVolunteers,
+    addEducation,
+    addExperience,
     updateVolunteer,
     deleteVolunteer
   };

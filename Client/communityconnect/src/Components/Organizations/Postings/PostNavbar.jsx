@@ -1,6 +1,5 @@
 import React from 'react';
-import NavBg from "../../assets/Nav.webp";
-import logo from "../../assets/logo.png";
+import logo from "../../Assets/logo.png";
 import { Link } from "react-router-dom";
 
 const PostNavbar = () => {

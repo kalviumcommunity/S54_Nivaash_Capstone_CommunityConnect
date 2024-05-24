@@ -1,20 +1,29 @@
-    const express = require('express');
-    const router = express.Router();
-    const volunteerController = require('../Controllers/VolunteerController.js');
+//VolunteerRouter.js
 
-    // Create a volunteer
-    router.post('/createvolunteer', volunteerController.createVolunteer);
+const express = require('express');
+const router = express.Router();
+const volunteerController = require('../Controllers/VolunteerController.js');
 
-    // Get volunteer by ID
-    router.get('/:id', volunteerController.getOneVolunteer);
+// Create a volunteer
+router.post('/createvolunteer', volunteerController.createVolunteer);
 
-    // Get all volunteers
-    router.get('/', volunteerController.getAllVolunteers);
+// Get volunteer by ID
+router.get('/id/:id', volunteerController.getOneVolunteer);
 
-    // Update volunteer by ID
-    router.put('/:id', volunteerController.updateVolunteer);
+// Get volunteer by email
+router.get('/email/:email', volunteerController.getVolunteerByEmail);
 
-    // Delete volunteer by ID
-    router.delete('/:id', volunteerController.deleteVolunteer);
+// Get all volunteers
+router.get('/', volunteerController.getAllVolunteers);
 
-    module.exports = router;
+router.put('/email/:email/education', volunteerController.addEducation);
+
+router.put('/email/:email/experience', volunteerController.addExperience);
+
+// Update volunteer by ID
+router.put('/:id', volunteerController.updateVolunteer);
+
+// Delete volunteer by ID
+router.delete('/:id', volunteerController.deleteVolunteer);
+
+module.exports = router;

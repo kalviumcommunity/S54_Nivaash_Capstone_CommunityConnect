@@ -5,10 +5,9 @@ import PostNavbar from './PostNavbar.jsx'
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import './post.css'
-import ProfileAvatar from '../../assets/Avatar.png'
+import ProfileAvatar from '../../Assets/Avatar.png'
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 
 
 const OrganizationPosts = () => {
@@ -22,7 +21,6 @@ const OrganizationPosts = () => {
             try {
                 const response = await axios.get('https://communityserver.vercel.app/post');
                 setPosts(response.data);
-                console.log(response.data);
             } catch (error) {                           
                 console.error('Error fetching posts:', error);
             }
@@ -35,7 +33,7 @@ const OrganizationPosts = () => {
             toast.dark('Please type something before submitting.');
             return; 
         }
-    
+        
         try {
             await axios.put(`https://communityserver.vercel.app/post/${postId}/comment`, {
                 comment: commentInput

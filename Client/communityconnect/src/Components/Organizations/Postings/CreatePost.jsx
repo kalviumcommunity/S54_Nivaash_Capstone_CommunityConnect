@@ -22,6 +22,7 @@ const CreatePost = ({ onCreatePost }) => {
     const uploadPreset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
 
     const handleImageUpload = async (e) => {
+        
         const imageFile = e.target.files[0];
       
         try {
@@ -37,7 +38,7 @@ const CreatePost = ({ onCreatePost }) => {
                 `https://api.cloudinary.com/v1_1/${cloudName}/upload`,
                 formDataToUpdate
             );
-        
+
             formDataCopy.EventImage = response.data.secure_url; 
             setFormData(formDataCopy);
             setImageUploaded(true); // Set imageUploaded to true after successful upload
@@ -47,7 +48,7 @@ const CreatePost = ({ onCreatePost }) => {
             setLoading(false); 
         }
     };
-    
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({ ...prevState, [name]: value }));

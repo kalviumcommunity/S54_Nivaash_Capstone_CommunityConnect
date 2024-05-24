@@ -1,18 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ChevronLeft, Edit, Delete } from '@mui/icons-material';
-import Volunteer from "../assets/VolunteerProfilePic.png";
+import { ChevronLeft, Edit, Delete } from "@mui/icons-material";
+import Volunteer from "../Assets/VolunteerProfilePic.png";
 
 const VolunteerNavBar = () => {
   return (
     <div className="navbar bg-[#2B2D42] py-4 px-12">
       <div className="navbar-start flex items-center">
-        <Link to="/" >
+        <Link to="/">
           <button className="btn btn-ghost text-white">
             <ChevronLeft />
           </button>
         </Link>
-        <img src={Volunteer} alt="Profile" className="w-10 h-10 rounded-full mr-2" />
+        <img
+          src={Volunteer}
+          alt="Profile"
+          className="w-10 h-10 rounded-full mr-2"
+        />
         <span className="text-white">Nivaash</span>
       </div>
       {/* Edit and delete buttons */}

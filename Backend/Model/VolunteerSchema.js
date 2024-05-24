@@ -1,52 +1,72 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const volunteerSchema = new Schema({
-
-    name: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true
-    },
-    password:{
-        type:String
-    },
-    picture: {
-        type: String
-    },
-    age: {
-        type: Number
-    },
-    contactNo: {
-        type: String
-    },
-    address: {
-        type: String
-    },
-    education: [{
-        institution: {
-            type: String,
-        },
-        degree: {
-            type: String,
-        }
-    }],
-    experience: {
-        type: String
-    },
-    Participation: {
-        type: Number,
-        default: 0
-    },
-    rating: {
-        type: Number,
-        default: 0
-    }
+const education = new Schema({
+  EducationalInstitute: {
+    type: String,
+  },
+  Course: {
+    type: String,
+  },
+  Courselocation: {
+    type: String,
+  },
 });
 
-const Volunteer = mongoose.model('Volunteer', volunteerSchema);
+const experience = new Schema({
+  organization: {
+    type: String,
+  },
+  duration: {
+    type: String,
+  },
+  Experiencelocation: {
+    type: String,
+  },
+});
+
+const volunteerSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  image: {
+    type: String,
+  },
+  Password: {
+    type: String,
+    required: true,
+  },
+  participations: {
+    type: Number,
+  },
+  rating: {
+    type: Number,
+  },
+  age: {
+    type: Number,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  contactNo: {
+    type: String,
+    required: true,
+  },
+  address: {
+    type: String,
+    required: true,
+  },
+  education: {
+    type: [education],
+  },
+  experience: {
+    type: [experience],
+  },
+});
+
+const Volunteer = mongoose.model("Volunteer", volunteerSchema);
 
 module.exports = Volunteer;
